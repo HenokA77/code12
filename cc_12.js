@@ -39,3 +39,36 @@ metricCardsArray.forEach(card => {
   card.style.backgroundColor = "#f0f8ff"; // Light blue shade
   card.style.border = "2px solid #007BFF"; // Blue border
 });
+
+// Task 3
+// Function to add a new product to the inventory list
+function addProduct(productName) {
+    const inventoryList = document.getElementById("inventoryList");
+  
+    // Create a new li element
+    const productItem = document.createElement("li");
+  
+    // Set attributes: class and data attribute
+    productItem.setAttribute("class", "product-item");
+    productItem.setAttribute("data-product", productName);
+  
+    // Set inner text to product name
+    productItem.innerText = productName;
+  
+    // Add click event to remove the item when clicked
+    productItem.addEventListener("click", function () {
+      removeProduct(productItem);
+    });
+  
+    // Append the product item to the inventory list
+    inventoryList.appendChild(productItem);
+  }
+  
+  // Function to remove a product from the inventory list
+  function removeProduct(productItem) {
+    const inventoryList = document.getElementById("inventoryList");
+    
+    // Remove the clicked product item
+    inventoryList.removeChild(productItem);
+  }
+  
