@@ -72,3 +72,24 @@ function addProduct(productName) {
     inventoryList.removeChild(productItem);
   }
   
+  // Task 4
+// Select the parent container
+const customerSection = document.getElementById("customerSection");
+
+// Add an event listener to the parent container
+customerSection.addEventListener("click", () => {
+  console.log("Parent container clicked!");
+});
+
+// Select all customer cards
+const customerCards = document.querySelectorAll(".customer-card");
+
+// Add click event listeners to each customer card
+customerCards.forEach(card => {
+  card.addEventListener("click", (event) => {
+    console.log("Customer card clicked");
+
+    // Prevent event from bubbling up to the parent container
+    event.stopPropagation();
+  });
+});
